@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> All members </h1>
+        <table border="4" cellspacing="0" cellpadding="8" bgcolor="FFFF00" align="center">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+
+            {% for x in mymembers %}
+                <tr>
+                <td>{{x.firstname}}</td> 
+                <td>{{x.lastname}}</td>
+                </tr>
+                
+            {% endfor %}
+    
+        </table>
+        
+    </body>
+</html>
