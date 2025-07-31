@@ -6,12 +6,16 @@
             <tr>
                 <th>FirstName</th>
                 <th>LastName</th>
+                <th>MobileNumber</th>
+                <th>JoinedDate</th>
             </tr>
 
             {% for x in mymembers %}
                 <tr>
                 <td>{{x.firstname}}</td> 
                 <td>{{x.lastname}}</td>
+                <td>{{x.phonenumber}}</td>
+                <td>{{x.joined_date}}</td>
                 </tr>
                 
             {% endfor %}
