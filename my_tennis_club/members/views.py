@@ -30,3 +30,13 @@ def testing(request):
         'fruits':fruits,
     }
     return HttpResponse(template.render(context,request))
+
+def add(request):
+    template=loader.get_template('result.html')
+    num1=0
+    num2=0
+    return HttpResponse(template.render(request))
+
+def addition(request):
+    template=loader.get_template('addition.html')
+    return HttpResponse(template.render({'name':'Dipu'},request))
