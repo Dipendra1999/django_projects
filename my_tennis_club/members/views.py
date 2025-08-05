@@ -33,9 +33,12 @@ def testing(request):
 
 def add(request):
     template=loader.get_template('result.html')
-    num1=0
-    num2=0
-    return HttpResponse(template.render(request))
+    num1=int(request.GET.get('num1'))
+    num2=int(request.GET.get('num2'))
+    context={
+        'result':num1+num2,
+    }
+    return HttpResponse(template.render(context,request))
 
 def addition(request):
     template=loader.get_template('addition.html')
