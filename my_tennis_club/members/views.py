@@ -1,6 +1,9 @@
-from django.template import loader
+from django.template import loader 
 from django.http import HttpResponse
 from .models import Member
+from django.shortcuts import render
+
+
 # Create your views here.
 
 def members(request):
@@ -32,13 +35,14 @@ def testing(request):
     return HttpResponse(template.render(context,request))
 
 def add(request):
-    template=loader.get_template('result.html')
-    num1=int(request.GET.get('num1'))
-    num2=int(request.GET.get('num2'))
-    context={
-        'result':num1+num2,
-    }
-    return HttpResponse(template.render(context,request))
+#    template=loader.get_template('result.html')
+    num1=int(request.POST.get('num1'))
+    num2=int(request.POST.get('num2'))
+#    context={
+#        'result':num1+num2,
+#    }
+#    return HttpResponse(template.render(context,request))
+    return render(request,'result.html',{'result':num1+num2})
 
 def addition(request):
     template=loader.get_template('addition.html')
